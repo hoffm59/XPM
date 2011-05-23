@@ -1,15 +1,22 @@
 package hoffm59.XPM.commands;
 
+import java.io.File;
+
 import hoffm59.XPM.XPM;
 import hoffm59.XPM.Utils.ICommandable;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.plugin.InvalidDescriptionException;
+import org.bukkit.plugin.InvalidPluginException;
 import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.UnknownDependencyException;
 
 public class EnablePlugin implements ICommandable 
 {
 	private final XPM plugin;
+	
+	private final String mainDirectory = "plugins";
 
 	public EnablePlugin(XPM plugin) 
 	{
@@ -28,7 +35,31 @@ public class EnablePlugin implements ICommandable
 			Plugin targetPlugin = plugin.getPluginManager().getPlugin(args[0]);
 			if (targetPlugin == null) 
 			{
-				sender.sendMessage("§cPlugin could not be found!");
+				File file = new File(mainDirectory + File.separator + args[0] + ".jar");
+				
+				if (!file.exists()) 
+				{
+					sender.sendMessage("§cPlugin could not be found!");
+					return true;
+				}			
+				
+				try 
+				{
+					Plugin loadedPlugin = plugin.getPluginManager().loadPlugin(file);
+					plugin.getPluginManager().enablePlugin(loadedPlugin);
+				} 
+				catch (InvalidPluginException e) 
+				{
+					e.printStackTrace();
+				} 
+				catch (InvalidDescriptionException e) 
+				{
+					e.printStackTrace();
+				} 
+				catch (UnknownDependencyException e) 
+				{
+					e.printStackTrace();
+				}
 			}
 			else
 			{

@@ -34,11 +34,14 @@ public class CommandManager
 			String label = entry.getKey();
 			String classname = entry.getValue().get("class").toString();
 			
-			try {
+			try 
+			{
 				Class<?> klass = Class.forName(classname, true, loader);
 				Class<? extends ICommandable> commandClass = klass.asSubclass(ICommandable.class);
-				addCommand(label, commandClass);
-			} catch (ClassNotFoundException e) {
+				addCommand(label, commandClass);				
+			} 
+			catch (ClassNotFoundException e) 
+			{
 				System.out.println("Unable to load command class for command /" + label);
 			} 
 		}

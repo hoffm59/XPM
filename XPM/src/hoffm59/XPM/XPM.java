@@ -35,7 +35,7 @@ public class XPM extends JavaPlugin
     private PermissionHandler _permissionHandler;
     private PluginManager _serverPM;
     
-	public void onEnable() 
+    public void onEnable() 
 	{	
 		_server = this.getServer();
 		_serverPM = _server.getPluginManager();

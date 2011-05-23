@@ -9,6 +9,7 @@ commands:
     class: hoffm59.XPM.commands.PluginVersion
     description: Gets version of a plugin.
     usage: /xpmv [pluginName]
+    aliases: 
   xpmlist:
     class: hoffm59.XPM.commands.ListPlugin
     description: Lists server plugins.
@@ -18,19 +19,24 @@ commands:
     class: hoffm59.XPM.commands.Help
     description: Shows help of XPM.
     usage: /xpm [help|?]
+    aliases: 
   xpmon:
     class: hoffm59.XPM.commands.EnablePlugin
-    description: Enables a plugin.
+    description: Enables a plugin if it is disabled or loads and enables it if it was dropped into the plugin folder while the server is running.
     usage: /xpmon [pluginName]
+    aliases: [xen]
   xpmoff:
     class: hoffm59.XPM.commands.DisablePlugin
     description: Disables a plugin.
     usage: /xpmoff [pluginName]
+    aliases: [xdis]
   xpmreload:
     class: hoffm59.XPM.commands.ReloadPlugin
     description: Disables a plugin.
     usage: /xpmoff [pluginName]
+    aliases: [xreload]
   xpmcommands:
     class: hoffm59.XPM.commands.GetPluginCommands
     description: Gets plugin commands.
     usage: /xpmcommands [pluginName]
+    aliases: [xcmds]

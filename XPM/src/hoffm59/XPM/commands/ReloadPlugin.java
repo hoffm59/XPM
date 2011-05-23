@@ -51,7 +51,7 @@ public class ReloadPlugin implements ICommandable
 					plugin.getPluginManager().enablePlugin(targetPlugin);
 					if (targetPlugin.isEnabled()) 
 					{
-						sender.sendMessage(targetPlugin.getDescription().getName() + "successfully reloaded.");
+						sender.sendMessage(targetPlugin.getDescription().getName() + " successfully reloaded.");
 					}
 					else
 					{
