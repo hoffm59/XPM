@@ -1,0 +1,36 @@
+name: XPM
+main: hoffm59.XPM.XPM
+version: 0.1
+author: hoffm59
+description: >
+    Extended plugin manager
+commands:
+  xpmv:
+    class: hoffm59.XPM.commands.PluginVersion
+    description: Gets version of a plugin.
+    usage: /xpmv [pluginName]
+  xpmlist:
+    class: hoffm59.XPM.commands.ListPlugin
+    description: Lists server plugins.
+    usage: /xpmlist [all|on|off]
+    aliases: xlist
+  xpm:
+    class: hoffm59.XPM.commands.Help
+    description: Shows help of XPM.
+    usage: /xpm [help|?]
+  xpmon:
+    class: hoffm59.XPM.commands.EnablePlugin
+    description: Enables a plugin.
+    usage: /xpmon [pluginName]
+  xpmoff:
+    class: hoffm59.XPM.commands.DisablePlugin
+    description: Disables a plugin.
+    usage: /xpmoff [pluginName]
+  xpmreload:
+    class: hoffm59.XPM.commands.ReloadPlugin
+    description: Disables a plugin.
+    usage: /xpmoff [pluginName]
+  xpmcommands:
+    class: hoffm59.XPM.commands.GetPluginCommands
+    description: Gets plugin commands.
+    usage: /xpmcommands [pluginName]
