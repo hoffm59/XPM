@@ -13,7 +13,7 @@ commands:
     class: hoffm59.XPM.commands.ListPlugin
     description: Lists server plugins.
     usage: /xpmlist [all|on|off]
-    aliases: xlist
+    aliases: [xlist]
   xpm:
     class: hoffm59.XPM.commands.Help
     description: Shows help of XPM.
